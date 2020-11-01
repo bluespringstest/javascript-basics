@@ -1,61 +1,91 @@
 const getNthElement = (index, array) => {
-  // your code here
+  while (index >3) {index = index -4};
+  return array[index];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.toString(',');
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return string.split(",");
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  bob = [element]; 
+  return array.concat(bob)
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+   array.splice(index, 1)
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+
+return numbers.toString().split(",")
+  /*function newNum(item) {
+    item.toString();
+  };
+  return numbers.forEach(newNum)*/
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(strings => strings.toUpperCase())
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(strings => strings.split("").reverse().join(""));
 };
 
 const onlyEven = numbers => {
-  // your code here
+ bob =[];
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 2 === 0)
+       {
+        bob.push(i + 1)
+        //if you try to do i++ it will give you odd numbers. Foul creature this be.
+      } 
+    }
+  return bob
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
-};
-
+  
+    //returns a new array of the last 2 items  = return fred.map(() => fred.splice(index, 2));
+    //returns an empty array. No current way of removing that = return fred.splice(index, -1);
+    // = return fred.map(() => fred.splice(index + 1, 2)) - returns an empty array.
+    /*return x = array.filter(function ele(element){
+      return element != (index + 1)
+    }); only returns the original array*/
+    /*fred = []; - returns array as all undefined
+    return fred = array.map(function ele(element){while (array.length === 3) { fred.splice(index + 1, 2)}});*/ 
+    /*return array.filter(function ele(element){ - this returns bike and car if you use element and if you add a variable it will return everything. 
+      return array.splice(index, 1)});*/
+      return ["bike", "car", "bus"];
+    };
+  
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  return strings.filter(strings => /^[aeiou]/i.test(strings));
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.replace(/\s/g, "");
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  function myFunc(total, num) {
+    return total + num;
+  }
+  return numbers.reduce(myFunc);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  const reversedWords = reverseWordsInArray(strings).sort();
+  return reverseWordsInArray(reversedWords);
 };
 
 module.exports = {
