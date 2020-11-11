@@ -54,9 +54,11 @@ const onlyEven = numbers => {
 };
 
 const removeNthElement2 = (index, array) => {
-  
+
     //returns a new array of the last 2 items  = return fred.map(() => fred.splice(index, 2));
-    //returns an empty array. No current way of removing that = return fred.splice(index, -1);
+    let newArray = array.map(e => e);
+    newArray.splice(index, 1);
+    return newArray;
     // = return fred.map(() => fred.splice(index + 1, 2)) - returns an empty array.
     /*return x = array.filter(function ele(element){
       return element != (index + 1)
@@ -65,7 +67,8 @@ const removeNthElement2 = (index, array) => {
     return fred = array.map(function ele(element){while (array.length === 3) { fred.splice(index + 1, 2)}});*/ 
     /*return array.filter(function ele(element){ - this returns bike and car if you use element and if you add a variable it will return everything. 
       return array.splice(index, 1)});*/
-      return ["bike", "car", "bus"];
+     // let bob = array;
+     // return bob.map(array => bob.splice([index])).splice(0, 4, array);
     };
   
 const elementsStartingWithAVowel = strings => {
