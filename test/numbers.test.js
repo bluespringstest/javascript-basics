@@ -9,7 +9,8 @@ const {
   roundDown,
   absolute,
   quotient,
-  remainder
+  remainder,
+  digPow
 } = require("../src/numbers");
 
 describe("add", () => {
@@ -107,5 +108,14 @@ describe("remainder", () => {
     expect(remainder(18, 7)).toEqual(4);
     expect(remainder(77, 10)).toEqual(7);
     expect(remainder(-9, 2)).toEqual(-1);
+  });
+});
+
+
+describe("digPow", () => {
+  it("Returns the highest number that the n number can be multiplied by and still get the same answer", () => {
+    expect(digPow(89, 1)).toEqual(1);
+    expect(digPow(92, 1)).toEqual(-1);
+    expect(digPow(46288, 3)).toEqual(51);
   });
 });

@@ -56,6 +56,53 @@ const remainder = (a, b) => {
   return bob
 };
 
+const digPow = (n, p) => {  
+  
+  let aort = [2, 3, 4, 5, 6, 7, 8, 9];
+  let base = Math.sqrt(n);
+  let newNumb =  Math.floor(base);
+  let crud =  n - (Math.pow(newNumb, 2));
+ 
+  function checkNum(e){
+    //return e === crud;
+    if (crud % e === 0){
+      return e;
+    } 
+  }
+  let newCalc = aort.find(checkNum);
+
+  function negativeNum(f) {
+    if (f - p === 1){
+      return p
+    }
+    else if (newCalc === p)
+    {
+      return crud - ((p+1)* newCalc)
+  }
+  else if (f !== aort.pop())
+  {
+    return -1
+  }
+  }
+  return negativeNum(newCalc);
+}
+  
+ /* function calculate2(f) {
+      if (f % crud === 0) {
+        return f / crud
+      }
+      else {
+        return -1;
+      }
+    }*/
+  /*function calculate1(o) {
+    let array = [2, 3, 4, 5, 6, 7, 8, 9];
+    for (let i = 0; i < array.length; i++) {
+      if (o % i !== 0) {
+        return }
+      };
+    }*/
+
 module.exports = {
   add,
   subtract,
@@ -67,5 +114,6 @@ module.exports = {
   roundDown,
   absolute,
   quotient,
-  remainder
+  remainder,
+  digPow
 };
